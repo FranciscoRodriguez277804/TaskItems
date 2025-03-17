@@ -1,0 +1,12 @@
+# Ignorar archivos innecesarios de .NET Core
+TaskManagerAPI/bin/
+TaskManagerAPI/obj/
+TaskManagerAPI/.vs/
+TaskManagerAPI/*.user
+
+# Ignorar archivos innecesarios de Angular
+task-manager-client/node_modules/
+task-manager-client/dist/
+task-manager-client/.angular/
+task-manager-client/.env
+

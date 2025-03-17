@@ -1,0 +1,11 @@
+# Archivos y carpetas de Visual Studio y .NET Core
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.swp
+*.db
+
+
+
