@@ -1,15 +1,20 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { TaskService } from '../../services/task.service';  // Asegúrate de tener el servicio en la misma carpeta o actualizar la ruta
+import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table'; // Importar MatTableModule
+
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-task-list',
-  standalone: true,  // Definir que es un componente standalone
+  standalone: true,
+  imports: [CommonModule, MatTableModule], // Agregar MatTableModule a los imports
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css'],
 })
 export class TaskListComponent implements OnInit {
   tasks: any[] = [];
-  private taskService = inject(TaskService);  // Inyección de dependencia en componente standalone
+  displayedColumns: string[] = ['id', 'title', 'completed']; // Columnas que se mostrarán en la tabla
+  private taskService = inject(TaskService);
 
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((data) => {
